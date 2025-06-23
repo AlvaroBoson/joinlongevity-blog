@@ -50,7 +50,7 @@ export default async function Page({ params: { locale } }: LandingPageProps) {
   const gqlClient = preview ? previewClient : client;
 
   const blogPostsData = await gqlClient.pageBlogPostCollection({
-    limit: 7, // Fetch one extra for the hero
+    limit: 100, // Fetch up to 100 posts
     locale,
     order: PageBlogPostOrder.PublishedDateDesc,
     preview,
